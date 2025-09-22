@@ -17,7 +17,7 @@ export default function LoginForm() {
   };
 
   const handleSubmit = () => {
-    console.log('Login submitted:', formData);
+    // handle submit
   };
 
   return (
@@ -92,7 +92,7 @@ export default function LoginForm() {
         {/* Sign up link */}
         <div className="text-center mt-6 pt-6 border-t border-gray-200">
           <p className="text-gray-600">
-            Don't have an account?{' '}
+            Don&#39;t have an account?{' '}
             <button className="text-green-400 hover:text-green-500 font-semibold transition-colors">
               Sign Up
             </button>

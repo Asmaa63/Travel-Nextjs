@@ -44,7 +44,7 @@ const DestinationsSection = () => {
 
         {/* Destinations Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 justify-items-center">
-          {destinations.map((destination, index) => (
+          {destinations.map((destination) => (
             <div
               key={destination.id}
               className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-3 hover:scale-105 overflow-hidden relative w-full max-w-sm"

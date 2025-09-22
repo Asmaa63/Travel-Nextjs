@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 
 const Brand: React.FC = () => {
   const brands = [
@@ -45,7 +46,7 @@ const Brand: React.FC = () => {
             Trusted by Leading Brands
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We're proud to work with industry leaders who trust us with their most important projects
+            We&#39;re proud to work with industry leaders who trust us with their most important projects
           </p>
         </div>
 
@@ -63,12 +64,16 @@ const Brand: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Brand Image */}
-              <img
-                src={brand.image}
-                alt={brand.alt}
-                className="relative z-10 w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src={brand.image}
+                  alt={brand.alt}
+                  fill
+                  className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                  sizes="(max-width: 640px) 120px, (max-width: 1024px) 160px, 180px"
+                  priority={false}
+                />
+              </div>
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-blue-200 transition-all duration-300"></div>

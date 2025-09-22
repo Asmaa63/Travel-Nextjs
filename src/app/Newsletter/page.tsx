@@ -74,7 +74,7 @@ const Newsletter: React.FC = () => {
           {/* Success Message */}
           {isSubscribed && (
             <div className="mt-4 p-3 bg-green-100 border border-green-200 rounded-lg text-green-800 text-sm max-w-lg mx-auto animate-fadeIn">
-              Thank you for subscribing! You'll receive the latest updates from Jadoo.
+              Thank you for subscribing! You&#39;ll receive the latest updates from Jadoo.
             </div>
           )}
         </div>

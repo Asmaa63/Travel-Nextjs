@@ -21,7 +21,7 @@ export default function SignUpForm() {
   };
 
   const handleSubmit = () => {
-    console.log('Sign up submitted:', formData);
+    // handle submit
   };
 
   return (
@@ -42,7 +42,7 @@ export default function SignUpForm() {
             <User className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-800 mb-2">Create Account</h2>
-          <p className="text-gray-600">Join us today! It's quick and easy</p>
+          <p className="text-gray-600">Join us today! It&#39;s quick and easy</p>
         </div>
 
         {/* Full Name input */}

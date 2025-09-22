@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface Testimonial {
   id: number;
@@ -68,7 +69,7 @@ const Testimonials: React.FC = () => {
       nextTestimonial();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextTestimonial]);
 
   const getNextIndex = () => (currentIndex + 1) % testimonials.length;
   const getPrevIndex = () => (currentIndex - 1 + testimonials.length) % testimonials.length;
@@ -156,14 +157,17 @@ const Testimonials: React.FC = () => {
               style={{ zIndex: 2 }}
             >
               <div className="flex items-start space-x-4 opacity-60">
-                <img
-                  src={testimonials[getNextIndex()].image}
-                  alt={testimonials[getNextIndex()].name}
-                  className="w-12 h-12 rounded-full flex-shrink-0"
-                />
+                <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src={testimonials[getNextIndex()].image}
+                    alt={testimonials[getNextIndex()].name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <div className="flex-1 space-y-2">
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    "{testimonials[getNextIndex()].text.substring(0, 60)}..."
+                    &quot;{testimonials[getNextIndex()].text.substring(0, 60)}...&quot;
                   </p>
                   <div>
                     <h4 className="font-medium text-gray-700 text-sm">
@@ -184,18 +188,21 @@ const Testimonials: React.FC = () => {
               <div className="flex items-start space-x-4">
                 {/* Profile Image */}
                 <div className="flex-shrink-0">
-                  <img
-                    src={testimonials[currentIndex].image}
-                    alt={testimonials[currentIndex].name}
-                    className="w-14 h-14 rounded-full ring-3 ring-blue-100 transform transition-transform duration-200 hover:scale-105"
-                  />
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden ring-3 ring-blue-100 transform transition-transform duration-200 hover:scale-105">
+                    <Image
+                      src={testimonials[currentIndex].image}
+                      alt={testimonials[currentIndex].name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 space-y-3">
                   {/* Quote */}
                   <blockquote className="text-gray-700 text-base leading-relaxed">
-                    "{testimonials[currentIndex].text}"
+                    &quot;{testimonials[currentIndex].text}&quot;
                   </blockquote>
 
                   {/* Author Info */}
