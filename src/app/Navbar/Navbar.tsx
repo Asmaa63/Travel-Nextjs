@@ -86,10 +86,6 @@ const Navbar = () => {
             >
               Sign in
             </Link>
-            <select className="text-gray-700 bg-transparent border-none outline-none text-sm lg:text-base font-medium cursor-pointer">
-              <option value="en">EN</option>
-              <option value="ar">AR</option>
-            </select>
           </div>
 
           {/* Mobile menu button */}
@@ -165,10 +161,6 @@ const Navbar = () => {
                 >
                   Sign in
                 </Link>
-                <select className="text-gray-700 bg-white border border-gray-300 rounded-md px-3 py-2 outline-none font-medium">
-                  <option value="en">EN</option>
-                  <option value="ar">AR</option>
-                </select>
               </div>
             </div>
           </div>
